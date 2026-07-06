@@ -1,0 +1,96 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-love: var(--love);
+  --color-love-deep: var(--love-deep);
+  --color-blush: var(--blush);
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.97 0.02 15);
+  --foreground: oklch(0.25 0.08 15);
+  --card: oklch(0.99 0.01 15);
+  --card-foreground: oklch(0.25 0.08 15);
+  --primary: oklch(0.62 0.24 15);
+  --primary-foreground: oklch(0.99 0.01 15);
+  --secondary: oklch(0.92 0.05 15);
+  --secondary-foreground: oklch(0.35 0.15 15);
+  --muted: oklch(0.94 0.03 15);
+  --muted-foreground: oklch(0.5 0.08 15);
+  --accent: oklch(0.75 0.18 350);
+  --accent-foreground: oklch(0.99 0.01 15);
+  --destructive: oklch(0.55 0.24 25);
+  --destructive-foreground: oklch(0.99 0.01 15);
+  --border: oklch(0.88 0.05 15);
+  --input: oklch(0.88 0.05 15);
+  --ring: oklch(0.62 0.24 15);
+  --love: oklch(0.65 0.26 15);
+  --love-deep: oklch(0.45 0.22 15);
+  --blush: oklch(0.88 0.08 15);
+
+  --gradient-love: linear-gradient(135deg, oklch(0.75 0.22 350), oklch(0.62 0.26 15));
+  --gradient-bg: linear-gradient(160deg, oklch(0.97 0.03 350), oklch(0.92 0.06 15));
+  --shadow-love: 0 20px 60px -15px oklch(0.62 0.26 15 / 0.4);
+  --shadow-key: 0 4px 14px -4px oklch(0.62 0.26 15 / 0.35);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background: var(--gradient-bg);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    min-height: 100vh;
+  }
+}
+
+@utility text-gradient-love {
+  background: var(--gradient-love);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-love {
+  background: var(--gradient-love);
+}
+
+@utility shadow-love {
+  box-shadow: var(--shadow-love);
+}
+
+@utility shadow-key {
+  box-shadow: var(--shadow-key);
+}
